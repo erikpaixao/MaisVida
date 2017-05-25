@@ -1,4 +1,4 @@
-package desafio.maisvidas.maisvidas;
+package desafio.maisvidas;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
