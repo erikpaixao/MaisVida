@@ -2,14 +2,16 @@ package desafio.maisvidas.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 
 import org.hibernate.validator.constraints.Email;
 
 @Entity
 public class Medic {
 	@Id
+	@GeneratedValue
 	private Long id;
 	private String lastName;
 	private String firstName;
@@ -19,7 +21,7 @@ public class Medic {
 	private Boolean isOccupied;
 	@Enumerated
 	private Speciality speciality;
-	@OneToOne
+	@ManyToOne
 	private City city;
 
 	public Medic(Long id, String lastName, String firstName, String email, Boolean isActive, Boolean isOccupied,

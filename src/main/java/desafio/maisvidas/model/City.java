@@ -4,16 +4,23 @@ import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class City {
 	
 	@Id
+	@GeneratedValue
 	private Long id;
 	@Enumerated
 	private State state;
 	private String name;
+	@OneToMany(mappedBy="id")
+	@JsonIgnore
 	private List<Medic> medic;
 
 	public City() {
