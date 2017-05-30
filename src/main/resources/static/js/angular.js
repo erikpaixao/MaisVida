@@ -20,10 +20,13 @@ var app = angular.module('MaisVida', ['ngRoute'])
 // ********************* Controllers *********************//
 
 app.controller('MedicosController', function(MedicosService, $scope){
-	$scope.
+	$scope.medicos = MedicosService.listarTodos();
+	console.log(MedicosService.listarTodos());
 });
 
-app.controller('MedicoDetalheController', function(MedicosDetalheService, $scope){});
+app.controller('MedicoDetalheController', function(MedicosDetalheService, $scope){
+	$scope.medico = {};
+});
 
 app.controller('LoginController', function(LoginService, $scope){
 	$scope.username = username;
@@ -33,7 +36,14 @@ app.controller('LoginController', function(LoginService, $scope){
 
 // ******************** Services ************************//
 
-app.service('MedicosService', function($http){});
+app.service('MedicosService', function($http){
+	
+	this.listarTodos = function(){
+		
+		return $http({method:'GET', url:'http://localhost:8080/api/privado/medicos/'}).then(function(response){
+		
+	})}
+});
 
 app.service('MedicosDetalheService', function($http){});
 
