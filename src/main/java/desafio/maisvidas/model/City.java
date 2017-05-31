@@ -19,7 +19,7 @@ public class City {
 	@Enumerated
 	private State state;
 	private String name;
-	@OneToMany(mappedBy="id")
+	@OneToMany(mappedBy="city")
 	@JsonIgnore
 	private List<Medic> medic;
 

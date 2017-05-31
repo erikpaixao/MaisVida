@@ -1,5 +1,5 @@
 <h2>Medicos</h2>
-  <p>Lista de medicos segundo ocupacao</p>            
+  <p>Lista de medicos segundo ocupacao</p>
   <table class="table table-striped">
     <thead>
       <tr>
@@ -12,14 +12,95 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-      <td>{{usuario.id}}</td>
-        <td>{{usuario.primeironome}}</td>
-        <td>{{usuario.ultimonome}}</td>
-        <td>{{usuario.email}}</td>
-        <td>{{usuario.isAtivo}}</td>
-        <td>{{usuario.isOcupado}}</td>
+      <tr ng-repeat="medico in medicos">
+      <td ng-dblclick="detalhar(medico.id)">{{medico.id}}</td>
+        <td ng-dblclick="detalhar(medico.id)">{{medico.firstName}}</td>
+        <td ng-dblclick="detalhar(medico.id)">{{medico.lastName}}</td>
+        <td ng-dblclick="detalhar(medico.id)">{{medico.email}}</td>
+        <td ng-dblclick="detalhar(medico.id)">{{medico.isActive}}</td>
+        <td ng-dblclick="detalhar(medico.id)">{{medico.isOccupied}}</td>
       </tr>
     </tbody>
   </table>
+  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Adicionar novo
+</button>
   
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Novo médico</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+	<div class="col-md-3">
+		<div class="form-group">
+			<label for="primeiroNome">Primeiro Nome</label><br/> <input type="text"
+				name="primeiroNome" ng-model="medico.firstName" >
+		</div>
+	</div>
+	<div class="col-md-3">
+		<div class="form-group">
+			<label for="ultimoNome">Ultimo Nome</label><br/> <input type="text"
+				name="primeiroNome" ng-model="medico.lastName" >
+		</div>
+	</div>
+	<div class="col-md-3">
+		<div class="form-group">
+			<label for="especialidade">Especialidade</label> <input type="text"
+				name="especialidade" ng-model="medico.speciality" >
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-3">
+		<div class="form-group">
+			<label for="email">E-mail</label><br/> <input type="text"
+				name="email" ng-model="medico.email" >
+		</div>
+	</div>
+	<div class="col-md-3">
+		<div class="form-group">
+			<label for="ativo">Ativo</label><br/> <input type="text"
+				name="ativo" ng-model="medico.isActive" >
+		</div>
+	</div>
+	<div class="col-md-3">
+		<div class="form-group">
+			<label for="status">Status</label><br/> <input type="text"
+				name="status" ng-model="medico.isOccupied" >
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-3">
+		<div class="form-group">
+			<label for="estado">Estado</label><br/> <input type="text"
+				name="estado" ng-model="medico.city.state" >
+		</div>
+	</div>
+	<div class="col-md-3">
+		<div class="form-group">
+			<label for="cidade">Cidade</label><br/> <input type="text"
+				name="cidade" ng-model="medico.city.id" >
+		</div>
+	</div>
+	<div class="col-md-3">
+		<div class="form-group">
+			
+		</div>
+	</div>
+</div>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" ng-click="salvar(medico)">Salvar</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

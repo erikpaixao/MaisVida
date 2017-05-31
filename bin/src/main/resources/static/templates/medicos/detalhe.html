@@ -1,31 +1,21 @@
-<style>
-input{
-border: 0;
-font-size: 20px;
-}
-
-label {
-	color: #e3e3e3;
-}
-</style>
 <h2>Detalhes</h2><hr/><br/>
 <div class="row">
 	<div class="col-md-3">
 		<div class="form-group">
-			<label for="primeiroNome">Primeiro Nome</label><br/> <input type="text"
-				name="primeiroNome" value="{{medico.firstName}}" readonly>
+			<label for="primeiroNome">Primeiro Nome</label> <input type="text"
+				name="primeiroNome" value="{{usuario.primeironome}}" readonly>
 		</div>
 	</div>
 	<div class="col-md-3">
 		<div class="form-group">
-			<label for="ultimoNome">Ultimo Nome</label><br/> <input type="text"
-				name="primeiroNome" value="{{medico.lastName}}" readonly>
+			<label for="ultimoNome">Ultimo Nome</label> <input type="text"
+				name="primeiroNome" value="{{usuario.ultimonome}}" readonly>
 		</div>
 	</div>
 	<div class="col-md-3">
 		<div class="form-group">
 			<label for="especialidade">Especialidade</label> <input type="text"
-				name="especialidade" value="{{medico.speciality}}" readonly>
+				name="especialidade" value="{{usuario.especialidade}}" readonly>
 		</div>
 	</div>
 </div>
@@ -33,19 +23,19 @@ label {
 	<div class="col-md-3">
 		<div class="form-group">
 			<label for="email">E-mail</label><br/> <input type="text"
-				name="email" value="{{medico.email}}" readonly>
+				name="email" value="{{usuario.email}}" readonly>
 		</div>
 	</div>
 	<div class="col-md-3">
 		<div class="form-group">
 			<label for="ativo">Ativo</label><br/> <input type="text"
-				name="ativo" value="{{medico.isActive ? 'Sim' : 'Não'}}" readonly>
+				name="ativo" value="{{usuario.isAtivo}}" readonly>
 		</div>
 	</div>
 	<div class="col-md-3">
 		<div class="form-group">
 			<label for="status">Status</label><br/> <input type="text"
-				name="status" value="{{medico.isOccupied ? 'Ocupado' : 'Livre'}}" readonly>
+				name="status" value="{{usuario.status}}" readonly>
 		</div>
 	</div>
 </div>
@@ -53,13 +43,13 @@ label {
 	<div class="col-md-3">
 		<div class="form-group">
 			<label for="estado">Estado</label><br/> <input type="text"
-				name="estado" value="{{medico.city.state}}" readonly>
+				name="estado" value="{{usuario.estado}}" readonly>
 		</div>
 	</div>
 	<div class="col-md-3">
 		<div class="form-group">
 			<label for="cidade">Cidade</label><br/> <input type="text"
-				name="cidade" value="{{medico.city.name}}" readonly>
+				name="cidade" value="{{usuario.cidade}}" readonly>
 		</div>
 	</div>
 	<div class="col-md-3">
